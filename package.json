@@ -1,0 +1,59 @@
+{
+  "about": {
+    "name": "gitTio Titanium & Alloy package manager",
+    "author": "Fokke Zandbergen",
+    "copyright": "Copyright (c) 2013, Fokke Zandbergen. All Rights Reserved.",
+    "id": "nl.fokkezb.gittio"
+  },
+  "name": "gittio",
+  "description": "Install Titanium modules and Alloy widgets",
+  "keywords": [
+    "appcelerator",
+    "titanium",
+    "mobile",
+    "ios",
+    "iphone",
+    "android",
+    "alloy",
+    "cli"
+  ],
+  "version": "0.0.1",
+  "author": {
+    "name": "Fokke Zandbergen",
+    "email": "mail@fokkezb.nl"
+  },
+  "maintainers": [
+    {
+      "name": "Fokke Zandbergen",
+      "email": "mail@fokkezb.nl"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fokkezb/gittio.git"
+  },
+  "preferGlobal": true,
+  "dependencies": {
+    "request": "2.30.0",
+    "execSync": "1.0.1-pre",
+    "github-download": "0.2.0",
+    "progress": "1.1.2",
+    "adm-zip": "0.4.3",
+    "fs-extra": "0.8.1",
+    "underscore": "1.5.2"
+  },
+  "license": "Apache Public License v2",
+  "bin": "./bin/gittio.js",
+  "directories": {
+    "bin": "./bin"
+  },
+  "engines": {
+    "node": ">=0.8"
+  },
+  "homepage": "http://fokkezb.nl/tag/gittio",
+  "readme": "",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/fokkezb/gittio/issues"
+  }
+}
