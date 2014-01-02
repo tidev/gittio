@@ -14,10 +14,10 @@ program.command('install')
 	.description('install all missing modules and widgets')
 	.action(install);
 
-program.command('install <id>')
+program.command('install <id>') // ony here for help
 	.description('install the latest version of a module or widget');
 
-program.command('install <id>@<version>')
+program.command('install <id>@<version>') // ony here for help
 	.description('install a specific version of a module or widget');
 
 program.parse(process.argv);
