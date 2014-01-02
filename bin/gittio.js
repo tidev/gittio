@@ -8,7 +8,8 @@ program
 	.version(package.version, '-v, --version')
 	.description(package.about.name)
 	.usage('command <args> [options]')
-	.option('-g, --global', 'install modules under global path');
+	.option('-g, --global', 'install modules under global path')
+	.option('-f, --force', 'install components even if already found');
 
 program.command('install')
 	.description('install all missing modules and widgets')
