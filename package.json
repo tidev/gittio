@@ -42,7 +42,8 @@
     "fs-extra": "0.8.1",
     "underscore": "1.5.2",
     "async": "0.2.9",
-    "commander": "2.1.0"
+    "commander": "2.1.0",
+    "timodules": "0.0.2"
   },
   "license": "Apache Public License v2",
   "bin": "./bin/gittio.js",

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 var gittio = require('../lib/gittio'),
+		config = require('../lib/config'),
 	program = require('commander'),
 	package = require('../package.json');
 
@@ -24,28 +25,30 @@ program.command('install <id>@<version>') // ony here for help
 program.parse(process.argv);
 
 if (program.args.length === 0 || typeof program.args[program.args.length - 1] === 'string') {
-    program.help();
+		program.help();
 }
 
 function install() {
+	var args = this.args;
+	config.init(function() {
+		if (typeof args[0] === 'string') {
+			var input = args[0];
+			var at = input.indexOf('@');
+			var id, version;
 
-	if (typeof this.args[0] === 'string') {
-		var input = this.args[0];
-		var at = input.indexOf('@');
-		var id, version;
+			if (at > 0) {
+				id = input.substr(0, at);
+				version = input.substr(at + 1);
 
-		if (at > 0) {
-			id = input.substr(0, at);
-			version = input.substr(at + 1);
+				return gittio.install(id, version);
 
-			return gittio.install(id, version);
+			} else {
+				id = input;
+				return gittio.install(id);
+			}
 
 		} else {
-			id = input;
-			return gittio.install(id);
+			return gittio.install();
 		}
-
-	} else {
-		return gittio.install();
-	}
+	});
 }
