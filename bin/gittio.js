@@ -28,8 +28,12 @@ if (program.args.length === 0 || typeof program.args[program.args.length - 1] ==
 		program.help();
 }
 
-function install() {
+function install(env) {
 	var args = this.args;
+	var params = {
+		force: this.force,
+		global: this.global
+	}
 	config.init(function() {
 		if (typeof args[0] === 'string') {
 			var input = args[0];
@@ -37,18 +41,12 @@ function install() {
 			var id, version;
 
 			if (at > 0) {
-				id = input.substr(0, at);
-				version = input.substr(at + 1);
-
-				return gittio.install(id, version);
-
+				params.id = input.substr(0, at);
+				params.version = input.substr(at + 1);
 			} else {
-				id = input;
-				return gittio.install(id);
+				params.id = input;
 			}
-
-		} else {
-			return gittio.install();
 		}
+		return gittio.install(params);
 	});
 }
