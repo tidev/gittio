@@ -40,12 +40,16 @@
     "progress": "1.1.2",
     "adm-zip": "0.4.3",
     "fs-extra": "0.8.1",
-    "underscore": "1.5.2"
+    "underscore": "1.5.2",
+    "async": "0.2.9",
+    "commander": "2.1.0"
   },
   "license": "Apache Public License v2",
   "bin": "./bin/gittio.js",
+  "main": "./lib/gittio.js",
   "directories": {
-    "bin": "./bin"
+    "bin": "./bin",
+    "lib": "./lib"
   },
   "engines": {
     "node": ">=0.8"
