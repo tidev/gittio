@@ -22,6 +22,11 @@ program.command('install <id>') // ony here for help
 program.command('install <id>@<version>') // ony here for help
   .description('install a specific version of a module or widget');
 
+program.command('info <id>')
+  .description('install all missing modules and widgets')
+  .action(gittio.info);
+
+
 program.parse(process.argv);
 
 if (program.args.length === 0 || typeof program.args[program.args.length - 1] === 'string') {
