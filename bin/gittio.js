@@ -23,7 +23,7 @@ program.command('install <id>@<version>') // ony here for help
   .description('install a specific version of a module or widget');
 
 program.command('info <id>')
-  .description('install all missing modules and widgets')
+  .description('display info about a component')
   .action(gittio.info);
 
 
