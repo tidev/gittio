@@ -36,7 +36,6 @@
   "dependencies": {
     "request": "2.30.0",
     "execSync": "1.0.1-pre",
-    "progress": "1.1.2",
     "adm-zip": "0.4.3",
     "fs-extra": "0.8.1",
     "underscore": "1.5.2",
