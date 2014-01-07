@@ -11,7 +11,7 @@ program
   .usage('command <args> [options]')
   .option('-g, --global', 'use global path for modules')
   .option('-f, --force', 'install components even if already found')
-  .option('-p, --platform', 'apply to a specific platform only');
+  .option('-p, --platform <platform>', 'apply to a specific platform only');
 
 program.command('install')
   .description('install all missing modules and widgets')
