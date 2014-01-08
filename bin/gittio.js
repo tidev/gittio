@@ -35,6 +35,7 @@ program.command('uninstall <id>@<version>')
 
 program.command('info <id>')
   .description('display info about a component')
+  .option('-o, --output <output>', 'pretty or json (default: pretty)')
   .action(gittio.info);
 
 program.parse(process.argv);
