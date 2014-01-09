@@ -34,7 +34,7 @@ program.command('update')
       platform: this.platform,
       update: true
     };
-    config.init(function() {
+    config.init(params.global, function() {
       return gittio.install(params);
     });
   });
@@ -65,7 +65,7 @@ function install(env) {
     global: this.global,
     platform: this.platform
   };
-  config.init(function() {
+  config.init(params.global, function() {
     if (typeof args[0] === 'string') {
       var input = args[0];
       var at = input.indexOf('@');
@@ -87,9 +87,10 @@ function uninstall(env) {
   var params = {
     force: this.force,
     global: this.global,
-    platform: this.platform
+    platform: this.platform,
+    global: this.global
   };
-  config.init(function() {
+  config.init(params.global, function() {
     if (typeof args[0] === 'string') {
       var input = args[0];
       var at = input.indexOf('@');
