@@ -25,6 +25,20 @@ program.command('install <id>')
 program.command('install <id>@<version>')
   .description('install a specific version of a module or widget');
 
+program.command('update')
+  .description('update all modules and widgets')
+  .action(function() {
+    var params = {
+      force: this.force,
+      global: this.global,
+      platform: this.platform,
+      update: true
+    };
+    config.init(function() {
+      return gittio.install(params);
+    });
+  });
+
 program.command('uninstall <id>')
   .description('uninstall a module or widget')
   .action(uninstall);
