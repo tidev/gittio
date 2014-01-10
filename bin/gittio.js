@@ -74,6 +74,7 @@ function install(env) {
       if (at > 0) {
         params.id = input.substr(0, at);
         params.version = input.substr(at + 1);
+        params.force = true;
       } else {
         params.id = input;
       }
@@ -87,8 +88,7 @@ function uninstall(env) {
   var params = {
     force: this.force,
     global: this.global,
-    platform: this.platform,
-    global: this.global
+    platform: this.platform
   };
   config.init(params.global, function() {
     if (typeof args[0] === 'string') {
