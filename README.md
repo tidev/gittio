@@ -129,8 +129,14 @@ Searches and installs modules under the global module path (`~/Library/Applicati
 ### -f, --force
 Forces install of components even if they are already found. When you specify a version to install this option is set automatically.
 
-### -p, --platform
+### -p, --platform <platform>
 Searches and installs modules only for the specified platform.
+
+### -t, --type <type>
+Installs or updates only missing components for type (`module` or `widget`).
+
+### -o --output json
+Output result of `info` command as `json`.
 
 ## Bugs
 When you find issues, please [report](https://github.com/FokkeZB/gittio/issues) them. Be sure to include *all* of the output from the gittio command that didn't work as expected. Also please check if there's not already in issue for it.
