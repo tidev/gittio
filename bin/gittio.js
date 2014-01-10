@@ -27,11 +27,13 @@ program.command('install <id>@<version>')
 
 program.command('update')
   .description('update all modules and widgets')
-  .action(function() {
+  .option('-t, --type <type>', 'widget or module (default: both)')
+  .action(function(options) {
     var params = {
       force: this.force,
       global: this.global,
       platform: this.platform,
+      type: options.type,
       update: true
     };
     config.init(params.global, function() {
