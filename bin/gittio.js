@@ -14,6 +14,7 @@ program
   .option('-p, --platform <platform>', 'apply to a specific platform only');
 
 program.command('install')
+  .usage('<id>@<version>')
   .description('install all missing modules and widgets')
   .action(install);
 
@@ -42,6 +43,7 @@ program.command('update')
   });
 
 program.command('uninstall <id>')
+  .usage('<id>@<version>')
   .description('uninstall a module or widget')
   .action(uninstall);
 
