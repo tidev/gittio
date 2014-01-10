@@ -1,4 +1,4 @@
-# gitTio PM CLI
+# gitTio Package Manager
 Command-line package manager for [Appcelerator](http://appcelerator.com) [Titanium](http://appcelerator.com/titanium) modules & [Alloy](http://appcelerator.com/alloy) widgets, powered by the [gitTio](http://gitt.io) search engine that indexes all open source components (modules and widgets) on [GitHub](http://github.com).
 
 [![NPM](https://nodei.co/npm/gittio.png?downloads=true&starts=true)](https://nodei.co/npm/gittio/)
