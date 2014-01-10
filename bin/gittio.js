@@ -16,6 +16,7 @@ program
 program.command('install')
   .usage('<id>@<version>')
   .description('install all missing modules and widgets')
+  .option('-t, --type <type>', 'widget or module (default: both)')
   .action(install);
 
 // ony here for help
@@ -29,12 +30,12 @@ program.command('install <id>@<version>')
 program.command('update')
   .description('update all modules and widgets')
   .option('-t, --type <type>', 'widget or module (default: both)')
-  .action(function(options) {
+  .action(function(env) {
     var params = {
       force: this.force,
       global: this.global,
       platform: this.platform,
-      type: options.type,
+      type: env.type,
       update: true
     };
     config.init(params.global, function() {
@@ -67,7 +68,8 @@ function install(env) {
   var params = {
     force: this.force,
     global: this.global,
-    platform: this.platform
+    platform: this.platform,
+    type: env.type
   };
   config.init(params.global, function() {
     if (typeof args[0] === 'string') {

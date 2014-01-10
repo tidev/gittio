@@ -121,7 +121,7 @@ Examples:
     ```
 
 ## Options
-Most important ones:
+Use `gittio` or `gittio -h` for full usage, but this covers 80%:
 
 ### -g, --global
 Searches and installs modules under the global module path (`~/Library/Application Support/Titanium/modules` on the Mac).
