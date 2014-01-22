@@ -3,6 +3,8 @@ Command-line package manager for [Appcelerator](http://appcelerator.com) [Titani
 
 [![NPM](https://nodei.co/npm/gittio.png?downloads=true&starts=true)](https://nodei.co/npm/gittio/)
 
+A screencast demonstrating gitTio can be found at: [http://youtu.be/Tgyfo8YHKxk](http://youtu.be/Tgyfo8YHKxk)
+
 ## Quickstart
 
 1. Install [gitTio](http://npmjs.org/package/gittio) using [NPM](http://npmjs.org):
