@@ -55,7 +55,7 @@ Examples:
     ~/myproject $ gittio install -g
     ```
     
-    **NOTE:** For widgets, though not officially supported by Alloy, you can add dependecies to other widgets in `widget.json` using the same notation as in `config.json`. The CLI will install all dependencies but ATM not check for conflicts (#21).
+    **NOTE:** For widgets, though not officially supported by Alloy, you can add dependecies to other widgets in `widget.json` using the same notation as in `config.json`. The CLI will install all dependencies but ATM not check for conflicts (#21). You can even add a `modules` property using the same notation to depend on modules, like `nl.fokkezb.drawer` depends on `dk.napp.drawer`.
     
 * Install the latest version of a component and add it to `tiapp.xml` or `app/config.json`:
 
@@ -121,6 +121,13 @@ Examples:
     ```
     ~ $ gittio uninstall -g facebook@3.1.1 -p ios
     ```
+    
+### demo
+Demos a module by creating a project with the module example included.
+
+```
+~ $ gittio demo dk.napp.drawer
+```
 
 ## Options
 Use `gittio` or `gittio -h` for full usage, but this covers 80%:
