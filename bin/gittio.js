@@ -57,7 +57,7 @@ program.command('uninstall <id>')
 program.command('uninstall <id>@<version>')
   .description('uninstall a specific version');
 
-  // ony here for help
+// ony here for help
 program.command('uninstall <id>@<version>:<platform>')
   .description('uninstall a specific version for a specific platform');
 
@@ -65,6 +65,10 @@ program.command('info <id>')
   .description('display info about a component')
   .option('-o, --output <output>', 'pretty or json (default: pretty)')
   .action(gittio.info);
+
+program.command('demo <id>')
+  .description('create a demo project using the module example app.js')
+  .action(demo);
 
 program.parse(process.argv);
 
@@ -134,5 +138,20 @@ function uninstall(env) {
     }
 
     return gittio.uninstall(params);
+  });
+}
+
+function demo(env) {
+  var args = this.args;
+  var params = {};
+  config.init(true, function() {
+    argsToParams(args, params);
+
+    if (!params.id) {
+      logger.error('missing <id>');
+      return;
+    }
+
+    return gittio.demo(params);
   });
 }
