@@ -44,7 +44,8 @@
     "tracer": "~0.6.1",
     "colors": "~0.6.2",
     "xml2js": "~0.4.1",
-    "rimraf": "~2.2.5"
+    "rimraf": "~2.2.5",
+    "update-notifier": "~0.1.7"
   },
   "license": "Apache Public License v2",
   "bin": "./bin/gittio.js",
