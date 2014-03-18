@@ -1,11 +1,10 @@
-# gitTio Package Manager
-Command-line package manager for [Appcelerator](http://appcelerator.com) [Titanium](http://appcelerator.com/titanium) modules & [Alloy](http://appcelerator.com/alloy) widgets, powered by the [gitTio](http://gitt.io) search engine that indexes all open source components (modules and widgets) on [GitHub](http://github.com).
+# gitTio Package Manager [![Titanium](http://www-static.appcelerator.com/badges/titanium-git-badge-sq.png)](http://www.appcelerator.com/titanium/) [![Alloy](http://www-static.appcelerator.com/badges/alloy-git-badge-sq.png)](http://www.appcelerator.com/alloy/)
 
-[![NPM](https://nodei.co/npm/gittio.png?downloads=true&starts=true)](https://nodei.co/npm/gittio/)
+Command-line package manager for [Appcelerator](http://appcelerator.com) [Titanium](http://appcelerator.com/titanium) modules & [Alloy](http://appcelerator.com/alloy) widgets, powered by the [gitTio](http://gitt.io) search engine that indexes all open source components (modules and widgets) on [GitHub](http://github.com).
 
 A screencast demonstrating gitTio can be found at: [http://youtu.be/Tgyfo8YHKxk](http://youtu.be/Tgyfo8YHKxk)
 
-## Quickstart
+## Quickstart [![gitTio](http://gitt.io/badge.png)](http://gitt.io/cli) [![npm](http://img.shields.io/npm/v/gittio.svg)](https://www.npmjs.org/package/gittio)
 
 1. Install [gitTio](http://npmjs.org/package/gittio) using [NPM](http://npmjs.org):
 
