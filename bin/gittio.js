@@ -120,11 +120,6 @@ function install(env) {
   config.init(params.global, function() {
     argsToParams(args, params);
 
-    if (!params.id) {
-      logger.error('missing <id>');
-      return;
-    }
-
     if (params.id && params.version) {
       params.force = true;
     }
