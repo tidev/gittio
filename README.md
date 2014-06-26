@@ -69,6 +69,11 @@ Examples:
     ~/myproject $ gittio install -g facebook@3.1.1 -p ios -f
     ```
     
+* Install a widget from the master of the underlying repo:
+
+    ```
+    ~/myproject $ gittio install nl.fokkezb.loading@master
+    
 * Install the latest version of a module to the global path:
 
     ```
