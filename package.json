@@ -42,7 +42,7 @@
     "commander": "~2.1.0",
     "timodules": "~0.1.1",
     "tracer": "~0.6.1",
-    "colors": "~0.6.2",
+    "chalk": "~0.4.0",
     "xml2js": "~0.4.1",
     "rimraf": "~2.2.5",
     "update-notifier": "~0.1.7"
