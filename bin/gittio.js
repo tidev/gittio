@@ -75,7 +75,7 @@ program.command('info <id>')
 
 program.command('demo <id>')
   .description('create a demo project using the module example app.js')
-  .option('-p, --platform <platform>', 'define which platform you\'d like to demo')
+  .option('-p, --platform <platform>', 'define which platform(s) you\'d like to demo (comma separated')
   .action(demo);
 
 program.parse(process.argv);
