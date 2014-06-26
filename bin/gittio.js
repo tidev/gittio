@@ -42,7 +42,7 @@ program.command('update')
   .option('-t, --type <type>', 'widget or module (default: both)')
   .action(function(env) {
     notifier.update && notifier.notify();
-    
+
     var params = {
       force: this.force,
       global: this.global,
@@ -76,6 +76,30 @@ program.command('info <id>')
 program.command('demo <id>')
   .description('create a demo project using the module example app.js')
   .action(demo);
+
+program.command('config')
+  .description('list all global configuration settings')
+  .action(function(env) {
+
+    // only run if there are no arguments
+    if (this.args.length === 1) {
+
+      require('../lib/config').list();
+
+      // or commander will also run the other config command
+      process.exit();
+
+    }
+
+  });
+
+program.command('config <key> <value>')
+  .description('set a global configuration setting')
+  .action(function(env) {
+
+    require('../lib/config').set(this.args[0], this.args[1]);
+
+  });
 
 program.parse(process.argv);
 
