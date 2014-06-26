@@ -42,7 +42,7 @@ program.command('update')
   .option('-t, --type <type>', 'widget or module (default: both)')
   .action(function(env) {
     notifier.update && notifier.notify();
-    
+
     var params = {
       force: this.force,
       global: this.global,
@@ -75,6 +75,7 @@ program.command('info <id>')
 
 program.command('demo <id>')
   .description('create a demo project using the module example app.js')
+  .option('-p, --platform <platform>', 'define which platform you\'d like to demo')
   .action(demo);
 
 program.parse(process.argv);
@@ -153,7 +154,9 @@ function demo(env) {
   notifier.update && notifier.notify();
 
   var args = this.args;
-  var params = {};
+  var params = {
+      platform: this.platform
+  };
   config.init(true, function() {
     argsToParams(args, params);
 
