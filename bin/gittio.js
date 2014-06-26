@@ -75,6 +75,7 @@ program.command('info <id>')
 
 program.command('demo <id>')
   .description('create a demo project using the module example app.js')
+  .option('-p, --platform <platform>', 'define which platform(s) you\'d like to demo (comma separated')
   .action(demo);
 
 program.command('config')
@@ -177,7 +178,9 @@ function demo(env) {
   notifier.update && notifier.notify();
 
   var args = this.args;
-  var params = {};
+  var params = {
+      platform: this.platform
+  };
   config.init(true, function() {
     argsToParams(args, params);
 
