@@ -36,7 +36,7 @@
   "dependencies": {
     "request": "~2.30.0",
     "adm-zip": "~0.4.3",
-    "fs-extra": "~0.8.1",
+    "fs-extended": "~0.2.0",
     "underscore": "~1.5.2",
     "async": "~0.2.9",
     "commander": "~2.1.0",

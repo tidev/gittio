@@ -4,6 +4,7 @@ var gittio = require('../lib/gittio'),
   config = require('../lib/config'),
   logger = require('../lib/logger'),
   program = require('commander'),
+  fs = require('fs'),
   package = require('../package.json'),
   updateNotifier = require('update-notifier');
 
@@ -114,20 +115,30 @@ function argsToParams(args, params) {
 
   if (typeof args[0] === 'string') {
     var input = args[0];
-    var at = input.indexOf('@');
-    var sc = input.indexOf(':');
 
-    if (sc > 0) {
-      params.platform = input.substr(sc + 1);
-      input = input.substr(0, sc);
-    }
+    if (input.indexOf('://') > 0) {
+      params.url = input;
 
-    if (at > 0) {
-      params.id = input.substr(0, at);
-      params.version = input.substr(at + 1);
+    } else if (fs.existsSync(input)) {
+      params.file = input;
 
     } else {
-      params.id = input;
+
+      var at = input.indexOf('@');
+      var sc = input.indexOf(':');
+
+      if (sc > 0) {
+        params.platform = input.substr(sc + 1);
+        input = input.substr(0, sc);
+      }
+
+      if (at > 0) {
+        params.id = input.substr(0, at);
+        params.version = input.substr(at + 1);
+
+      } else {
+        params.id = input;
+      }
     }
   }
 }
@@ -179,7 +190,7 @@ function demo(env) {
 
   var args = this.args;
   var params = {
-      platform: this.platform
+    platform: this.platform
   };
   config.init(true, function() {
     argsToParams(args, params);
