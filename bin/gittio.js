@@ -111,15 +111,15 @@ if (program.args.length === 0 || typeof program.args[program.args.length - 1] ==
   program.help();
 }
 
-function argsToParams(args, params) {
+function argsToParams(args, params, url) {
 
   if (typeof args[0] === 'string') {
     var input = args[0];
 
-    if (input.indexOf('://') > 0) {
+    if (url && input.indexOf('://') > 0) {
       params.url = input;
 
-    } else if (fs.existsSync(input)) {
+    } else if (url && fs.existsSync(input)) {
       params.file = input;
 
     } else {
@@ -154,7 +154,7 @@ function install(env) {
     type: env.type
   };
   config.init(params.global, function() {
-    argsToParams(args, params);
+    argsToParams(args, params, true);
 
     if (params.id && params.version) {
       params.force = true;
