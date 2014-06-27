@@ -73,12 +73,21 @@ Examples:
 
     ```
     ~/myproject $ gittio install nl.fokkezb.loading@master
+    ```
     
 * Install the latest version of a module to the global path:
 
     ```
     ~ $ gittio install -g facebook
     ```
+    
+* Install a module or zip file by pointing to a local or ZIP file:
+
+	```
+	~ $ gittio install https://github.com/FokkeZB/nl.fokkezb.form/archive/master.zip
+	~ $ gittio install -g ~/mymodule.zip
+	```
+
 
 ### update
 Updates all components to their latest versions.
@@ -129,9 +138,7 @@ Examples:
 ### demo
 Demos a module by creating a project with the module example included.
 
-```
-~ $ gittio demo dk.napp.drawer
-```
+	~ $ gittio demo dk.napp.drawer -p ios
 
 ## Options
 Use `gittio` or `gittio -h` for full usage, but this covers 80%:
@@ -150,6 +157,11 @@ Installs or updates only missing components for type (`module` or `widget`).
 
 ### -o --output json
 Output result of `info` command as `json`.
+
+## Configuration
+Starting version 1.4, there's also a `config` command to override default configuration settings. At the moment, the only - but crucial - setting is `registry.url` which lets you instruct the CLI to talk a different registry then gitTio's, as long as it follows the same format.
+	
+	~ $ gittio config registry.url http://registry.mycompany.com
 
 ## Bugs
 When you find issues, please [report](https://github.com/FokkeZB/gittio/issues) them. Be sure to include *all* of the output from the gittio command that didn't work as expected. Also please check if there's not already in issue for it.
