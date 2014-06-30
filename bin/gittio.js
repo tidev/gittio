@@ -20,8 +20,8 @@ program
   .option('-f, --force', 'install components even if already found')
   .option('-p, --platform <platform>', 'apply to a specific platform only');
 
-program.command('install')
-  .usage('<id>@<version>:<platform>')
+var install_cmd = program.command('install')
+  .usage('<id>@<version>:<platform>')  
   .description('install all missing modules and widgets')
   .option('-t, --type <type>', 'widget or module (default: both)')
   .action(install);
@@ -37,6 +37,14 @@ program.command('install <id>@<version>')
 // ony here for help
 program.command('install <id>@<version>:<platform>')
   .description('install a specific version for a specific platform');
+
+// create alias command
+var install_alias = program.command('i')
+  .action(install)
+  .description("shorthand for `install`");
+
+// clone the options
+install_alias.options = install_cmd.options;
 
 program.command('update')
   .description('update all modules and widgets')
@@ -56,7 +64,7 @@ program.command('update')
     });
   });
 
-program.command('uninstall <id>')
+var uninstall_cmd = program.command('uninstall <id>')
   .usage('<id>@<version>:<platform>')
   .description('uninstall a module or widget')
   .action(uninstall);
@@ -68,6 +76,14 @@ program.command('uninstall <id>@<version>')
 // ony here for help
 program.command('uninstall <id>@<version>:<platform>')
   .description('uninstall a specific version for a specific platform');
+
+// create alias command
+var uninstall_alias = program.command('u')
+  .action(uninstall)
+  .description("shorthand for `uninstall`");
+
+// clone the options
+install_alias.options = install_cmd.options;
 
 program.command('info <id>')
   .description('display info about a component')
