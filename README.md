@@ -113,7 +113,7 @@ Examples:
     ```
 
 ### uninstall
-Installs a specific component/version/platform.
+Uninstalls a specific component/version/platform.
 
 Examples:
 
