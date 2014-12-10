@@ -21,7 +21,7 @@ program
   .option('-p, --platform <platform>', 'apply to a specific platform only');
 
 var install_cmd = program.command('install')
-  .usage('<id>@<version>:<platform>')  
+  .usage('<id>@<version>:<platform>')
   .description('install all missing modules and widgets')
   .option('-t, --type <type>', 'widget or module (default: both)')
   .action(install);
