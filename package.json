@@ -34,17 +34,17 @@
   },
   "preferGlobal": true,
   "dependencies": {
-    "request": "~2.30.0",
     "adm-zip": "~0.4.3",
-    "fs-extended": "~0.2.0",
-    "underscore": "~1.5.2",
     "async": "~0.2.9",
     "chalk": "~0.4.0",
     "commander": "~2.1.0",
-    "timodules": "~0.1.1",
-    "xml2js": "~0.4.1",
+    "fs-extended": "~0.2.0",
+    "request": "~2.30.0",
     "rimraf": "~2.2.5",
-    "update-notifier": "~0.1.7"
+    "timodules": "~0.1.1",
+    "underscore": "~1.5.2",
+    "update-notifier": "~0.1.7",
+    "xml2js": "~0.4.1"
   },
   "license": "Apache Public License v2",
   "bin": "./bin/gittio.js",
