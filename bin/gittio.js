@@ -21,7 +21,7 @@ program
   .option('-p, --platform <platform>', 'apply to a specific platform only');
 
 var install_cmd = program.command('install')
-  .usage('<id>@<version>:<platform>')
+  .usage('<id>@<version-range>:<platform>')
   .description('install all missing modules and widgets')
   .option('-t, --type <type>', 'widget or module (default: both)')
   .action(install);
@@ -31,12 +31,12 @@ program.command('install <id>')
   .description('install the latest version');
 
 // ony here for help
-program.command('install <id>@<version>')
-  .description('install a specific version');
+program.command('install <id>@<version-range>')
+  .description('install a specific version (range)');
 
 // ony here for help
-program.command('install <id>@<version>:<platform>')
-  .description('install a specific version for a specific platform');
+program.command('install <id>@<version-range>:<platform>')
+  .description('install a specific version (range) for a specific platform');
 
 // create alias command
 var install_alias = program.command('i')
