@@ -18,6 +18,7 @@ program
   .usage('command <args> [options]')
   .option('-g, --global', 'use global path for modules')
   .option('-f, --force', 'install components even if already found')
+  .option('-b, --alloy-base <directory>', 'select a different alloy base directory instead of app, e.g. src')
   .option('-p, --platform <platform>', 'apply to a specific platform only');
 
 var install_cmd = program.command('install')
@@ -57,9 +58,10 @@ program.command('update')
       global: this.global,
       platform: this.platform,
       type: env.type,
-      update: true
+      update: true,
+      alloyBase: this.alloyBase
     };
-    config.init(params.global, function() {
+    config.init(params, function() {
       return gittio.install(params);
     });
   });
@@ -167,9 +169,10 @@ function install(env) {
     force: this.force,
     global: this.global,
     platform: this.platform,
-    type: env.type
+    type: env.type,
+    alloyBase: this.alloyBase
   };
-  config.init(params.global, function() {
+  config.init(params, function() {
     argsToParams(args, params, true);
 
     if (params.id && params.version) {
@@ -187,9 +190,10 @@ function uninstall(env) {
   var params = {
     force: this.force,
     global: this.global,
-    platform: this.platform
+    platform: this.platform,
+    alloyBase: this.alloyBase
   };
-  config.init(params.global, function() {
+  config.init(params, function() {
     argsToParams(args, params);
 
     if (!params.id) {
@@ -206,9 +210,11 @@ function demo(env) {
 
   var args = this.args;
   var params = {
-    platform: this.platform
+    platform: this.platform,
+    global: true,
+    alloyBase: this.alloyBase
   };
-  config.init(true, function() {
+  config.init(params, function() {
     argsToParams(args, params);
 
     if (!params.id) {
