@@ -5,16 +5,15 @@ var gittio = require('../lib/gittio'),
   logger = require('../lib/logger'),
   program = require('commander'),
   fs = require('fs'),
-  package = require('../package.json'),
-  updateNotifier = require('update-notifier');
-
-var notifier = updateNotifier({
-  packagePath: '../package.json'
-});
+  pkg = require('../package.json'),
+  updateNotifier = require('update-notifier'),
+  notifier = updateNotifier({
+    pkg: pkg
+  });
 
 program
-  .version(package.version, '-v, --version')
-  .description(package.about.name)
+  .version(pkg.version, '-v, --version')
+  .description(pkg.about.name)
   .usage('command <args> [options]')
   .option('-g, --global', 'use global path for modules')
   .option('-f, --force', 'install components even if already found')
@@ -51,7 +50,7 @@ program.command('update')
   .description('update all modules and widgets')
   .option('-t, --type <type>', 'widget or module (default: both)')
   .action(function(env) {
-    notifier.update && notifier.notify();
+    notifier.notify();
 
     var params = {
       force: this.force,
@@ -124,7 +123,7 @@ program.command('config <key> <value>')
 program.parse(process.argv);
 
 if (program.args.length === 0 || typeof program.args[program.args.length - 1] === 'string') {
-  notifier.update && notifier.notify();
+  notifier.notify();
 
   program.help();
 }
@@ -162,7 +161,7 @@ function argsToParams(args, params, url) {
 }
 
 function install(env) {
-  notifier.update && notifier.notify();
+  notifier.notify();
 
   var args = this.args;
   var params = {
@@ -184,7 +183,7 @@ function install(env) {
 }
 
 function uninstall(env) {
-  notifier.update && notifier.notify();
+  notifier.notify();
 
   var args = this.args;
   var params = {
@@ -206,7 +205,7 @@ function uninstall(env) {
 }
 
 function demo(env) {
-  notifier.update && notifier.notify();
+  notifier.notify();
 
   var args = this.args;
   var params = {
