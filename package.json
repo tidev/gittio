@@ -43,7 +43,7 @@
     "request": "^2.67.0",
     "rimraf": "~2.2.5",
     "semver": "^4.1.0",
-    "timodules": "^0.1.1",
+    "timodules": "^0.1.3",
     "underscore": "~1.5.2",
     "update-notifier": "^0.6.0",
     "xml2js": "~0.4.1"
