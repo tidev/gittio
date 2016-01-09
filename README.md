@@ -158,6 +158,20 @@ Installs or updates only missing components for type (`module` or `widget`).
 ### -o --output json
 Output result of `info` command as `json`.
 
+### -b --alloy-base <dir>
+Base directory for alloy. Default is 'app'.
+
+## Per Project Configuration
+Add a `.gittiorc` or compatible [rc](https://github.com/dominictarr/rc) configuration file to your project folder.
+
+```json
+{
+  "alloyBase": "src"
+  "platform": "ios"
+}
+```
+There are currently only two supported options listed above. Command line options take priority over these options.
+
 ## Configuration
 Starting version 1.4, there's also a `config` command to override default configuration settings. At the moment, the only - but crucial - setting is `registry.url` which lets you instruct the CLI to talk a different registry then gitTio's, as long as it follows the same format.
 	
