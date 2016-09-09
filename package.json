@@ -42,7 +42,7 @@
     "fs-extended": "~0.2.0",
     "glob": "^4.3.1",
     "rc": "^1.1.6",
-    "request": "^2.67.0",
+    "request": "^2.74.0",
     "rimraf": "~2.2.5",
     "semver": "^4.1.0",
     "timodules": "^0.1.3",
